@@ -1,19 +1,29 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model Clientes {
-  id Int @id @default(autoincrement())
-  nome String @unique
-  email String @unique
-  urlImg String? @default(dbgenerated("https://cdn-icons-png.flaticon.com/512/6596/6596121.png"))
-  gasto Int
+  id     Int    @id @default(autoincrement())
+  nome   String
+  email  String @unique
+  urlImg String @default("https://cdn-icons-png.flaticon.com/512/6596/6596121.png")
+  gasto  Float
+}
+
+model Produtos {
+  id     Int    @id @default(autoincrement())
+  nome   String
+  valor  Float
+}
+
+model Pedidos {
+  id        Int    @id @default(autoincrement())
+  produto   String
+  valor     Float
 }

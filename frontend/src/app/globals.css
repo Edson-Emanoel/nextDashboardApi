@@ -88,3 +88,23 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Barra de rolagem personalizada */
+.scrollbar-custom::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: #1e293b;
+  border-radius: 2px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: #4338ca;
+  border-radius: 2px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  background: #3730a3;
+}

@@ -17,7 +17,7 @@ const CustomLegendContainer = (props) => {
       return (
         <div
           style={{
-            backgroundColor: "#1e293b", // Nova cor de fundo
+            backgroundColor: "#1e293b",
             borderRadius: "8px",
             padding: "10px",
             display: "inline-block",
@@ -58,7 +58,7 @@ export function ChartOverview(){
       const chartConfig = {
             ValorAnoPassado: {
                   label: "Ano Passado",
-                  color: "#3730a3"
+                  color: "#4f46e5"
             },
 
             ValorAnoAtual: {

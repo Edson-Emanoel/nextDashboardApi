@@ -44,7 +44,19 @@ export default function Home() {
 
           <CardContent>
             <p className="text-base sm:text-lg font-bold">
-              R$ { clientes.reduce((acc, cliente) => { return acc + cliente.gasto }, 0) }
+              {`R$
+                
+                ${
+                  clientes
+                  .reduce((acc, cliente) => acc + cliente.gasto, 0)
+                  .toLocaleString('pt-BR',
+                    {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2
+                    }
+                  )
+                }
+              `}
             </p>
           </CardContent>
         </Card>
